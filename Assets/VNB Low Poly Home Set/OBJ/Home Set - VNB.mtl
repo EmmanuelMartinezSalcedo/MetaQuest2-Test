@@ -1,0 +1,242 @@
+# Blender 3.4.1 MTL File: 'homeSet.blend'
+# www.blender.org
+
+newmtl Brick
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/pattern2.png
+
+newmtl Cereal_Box
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/cereal box.png
+
+newmtl Custom_Cup
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/Custom Cup Image.png
+
+newmtl Laptop_Screen
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Redo/Textures/Laptop Screen.png
+
+newmtl Light
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.827546 0.827546 0.827546
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl LightAlt
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.827546 0.672076 0.130754
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Microwave
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/microwave.png
+
+newmtl Milk
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Redo/Textures/Milk.png
+
+newmtl Painting1
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/Paintings.png
+
+newmtl Painting2
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/Paintings2.png
+
+newmtl Painting3
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/Paintings3.png
+
+newmtl Palette
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Unity/Model Testing 2020.3/Assets/VNB - Home Set/Textures/palette1.png
+
+newmtl Pattern_1
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/rug tile 2.png
+
+newmtl Pattern_2
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/rug1.png
+
+newmtl Phone_Screen
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/phone.png
+
+newmtl Poster
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/Poster 3.png
+
+newmtl Poster_2
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/Poster 4.png
+
+newmtl Roof
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/roof tile.png
+
+newmtl TV_Screen
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/TV 1.png
+
+newmtl Terrain
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/terrain 1.png
+
+newmtl Washing_Product
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Redo/Textures/Washing Product.png
+
+newmtl Wooden_Floor_(1)
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/floor1.png
+
+newmtl Wooden_Floor_(2)
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/floor2.png
+
+newmtl Wooden_Wall
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Documents N/Blender 2.8/2020-21/Home Set/Textures/wall.png
