@@ -832,6 +832,79 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &1616238385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860330420058532049, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862411834494777321, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: m_Name
+      value: Extinguisher
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038213959817188781, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: maxAmmo
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038213959817188781, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: canExtinguishA
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038213959817188781, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: canExtinguishB
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038213959817188781, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
+      propertyPath: canExtinguishC
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd71d15c80953ab4a890988df5c6a426, type: 3}
 --- !u!108 &1675795589 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 4988502322297812243, guid: c93122086be896347ae3beeb4f347fbe, type: 3}
@@ -965,3 +1038,4 @@ SceneRoots:
   - {fileID: 967607972}
   - {fileID: 1312418876}
   - {fileID: 1211919}
+  - {fileID: 1616238385}
