@@ -6,7 +6,11 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
     public GameObject foamPrefab;    // Prefab de la espuma
     public Transform foamSpawner;    // Lugar desde donde sale la espuma
     public float foamSpeed = 10f;     // Velocidad de la espuma
-    public float fireRate = 0.1f;     // Cada cuánto dispara (como metralleta)
+    public float fireRate = 0.1f;     // Cada cuánto dispara
+
+    public bool isA;
+    public bool isB;
+    public bool isC;
 
     private bool dosManosActivas = false;
     private float nextFireTime = 0f;
@@ -44,6 +48,20 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
         {
             GameObject foam = Instantiate(foamPrefab, foamSpawner.position, foamSpawner.rotation);
 
+            // PASAR los atributos al foam
+            foam foamScript = foam.GetComponent<foam>();
+            if (foamScript != null)
+            {
+                foamScript.isA = this.isA;
+                foamScript.isB = this.isB;
+                foamScript.isC = this.isC;
+            }
+            else
+            {
+                Debug.LogWarning("El prefab de Foam no tiene un script 'Foam' asignado!");
+            }
+
+            // Aplicar movimiento
             Rigidbody rb = foam.GetComponent<Rigidbody>();
             if (rb != null)
             {
