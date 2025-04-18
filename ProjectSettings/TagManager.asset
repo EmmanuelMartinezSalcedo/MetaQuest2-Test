@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Foam
+  - Fire
   layers:
   - Default
   - TransparentFX
