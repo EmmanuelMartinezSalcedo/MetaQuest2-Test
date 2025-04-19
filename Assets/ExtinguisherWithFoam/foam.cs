@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections;
 
 public class foam : MonoBehaviour
 {
-    public float lifetime = 3f; // Tiempo antes de desaparecer
-    public float decelerationRate = 5f; // Tasa de desaceleración
+    public float lifetime = 3f;              // Tiempo total de vida
+    public float decelerationRate = 0.98f;      // Tasa de desaceleración
+    public float shrinkDuration = 0.5f;      // Cuánto tarda en reducirse antes de desaparecer
+
     public bool isA;
     public bool isB;
     public bool isC;
@@ -14,44 +17,52 @@ public class foam : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rend = GetComponent<Renderer>(); // Obtener el Renderer para cambiar color
+        rend = GetComponent<Renderer>();
 
         CambiarColorPorTipo();
 
-        Destroy(gameObject, lifetime);
+        // Iniciar la rutina de desaparición
+        StartCoroutine(ShrinkAndDestroy());
     }
 
     void Update()
     {
         if (rb != null)
         {
-            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, Vector3.zero, decelerationRate * Time.deltaTime);
+            rb.linearVelocity *= 1f - (decelerationRate * Time.deltaTime);
         }
     }
 
+
     void CambiarColorPorTipo()
     {
-        if (rend == null)
-        {
-            Debug.LogWarning("No hay Renderer en el objeto Foam!");
-            return;
-        }
+        if (rend == null) return;
 
         if (isA)
-        {
-            rend.material.color = Color.red; // Por ejemplo, tipo A = rojo
-        }
+            rend.material.color = Color.red;
         else if (isB)
-        {
-            rend.material.color = Color.green; // Tipo B = verde
-        }
+            rend.material.color = Color.green;
         else if (isC)
-        {
-            rend.material.color = Color.blue; // Tipo C = azul
-        }
+            rend.material.color = Color.blue;
         else
+            rend.material.color = Color.white;
+    }
+
+    IEnumerator ShrinkAndDestroy()
+    {
+        yield return new WaitForSeconds(lifetime - shrinkDuration);
+
+        Vector3 initialScale = transform.localScale;
+        float elapsed = 0f;
+
+        while (elapsed < shrinkDuration)
         {
-            rend.material.color = Color.white; // Si no tiene tipo, blanco
+            float t = elapsed / shrinkDuration;
+            transform.localScale = Vector3.Lerp(initialScale, Vector3.zero, t);
+            elapsed += Time.deltaTime;
+            yield return null;
         }
+
+        Destroy(gameObject);
     }
 }

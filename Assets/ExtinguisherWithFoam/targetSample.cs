@@ -10,6 +10,11 @@ public class CubeTarget : MonoBehaviour
     public bool isB;
     public bool isC;
 
+    public GameObject smokePrefab; // ← Aquí arrastras tu prefab en el Inspector
+
+    [Range(0f, 1f)]
+    public float smokeSpawnChance = 0.7f; // 70% de probabilidad por defecto
+
     private Renderer rend;
 
     void Start()
@@ -26,14 +31,28 @@ public class CubeTarget : MonoBehaviour
         foam foamScript = collision.gameObject.GetComponent<foam>();
         if (foamScript != null)
         {
+            if (smokePrefab != null && Random.value < smokeSpawnChance)
+            {
+                Vector3 randomOffset = new Vector3(
+                    Random.Range(-0.2f, 0.2f),
+                    0f,
+                    Random.Range(-0.2f, 0.2f)
+                );
+
+                Vector3 spawnPosition = collision.transform.position + randomOffset;
+                Instantiate(smokePrefab, spawnPosition, Quaternion.identity);
+            }
+
             if (EsMatch(foamScript))
             {
-                // Match correcto, reducir vida
-                float damage = 10f; // Puedes ajustar cuánto daño hace un impacto
+                float damage = 1f;
+                RecibirDanio(damage);
+            }
+            else{
+                float damage = -2f;
                 RecibirDanio(damage);
             }
 
-            // Siempre destruir el foam al tocar
             Destroy(collision.gameObject);
         }
     }
@@ -43,7 +62,6 @@ public class CubeTarget : MonoBehaviour
         currentLife -= damage;
         currentLife = Mathf.Max(currentLife, 0f);
 
-        // Actualizar la escala proporcionalmente
         float lifePercent = currentLife / maxLife;
         transform.localScale = initialScale * lifePercent;
 
@@ -66,27 +84,11 @@ public class CubeTarget : MonoBehaviour
 
     void CambiarColorPorTipo()
     {
-        if (rend == null)
-        {
-            Debug.LogWarning("No hay Renderer en el cubo!");
-            return;
-        }
+        if (rend == null) return;
 
-        if (isA)
-        {
-            rend.material.color = Color.red;
-        }
-        else if (isB)
-        {
-            rend.material.color = Color.green;
-        }
-        else if (isC)
-        {
-            rend.material.color = Color.blue;
-        }
-        else
-        {
-            rend.material.color = Color.white; // Por si no tiene tipo definido
-        }
+        if (isA) rend.material.color = Color.red;
+        else if (isB) rend.material.color = Color.green;
+        else if (isC) rend.material.color = Color.blue;
+        else rend.material.color = Color.white;
     }
 }
