@@ -29,6 +29,11 @@ public class Health : MonoBehaviour
         UpdateUI();
     }
 
+    public void Breathe()
+    {
+        oxygen += oxygenRecoveryRate * Time.deltaTime;
+    }
+
     void Update()
     {
         Vector3 targetPos = transform.position;
