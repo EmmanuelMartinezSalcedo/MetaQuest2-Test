@@ -10,10 +10,14 @@ public class CubeTarget : MonoBehaviour
     public bool isB;
     public bool isC;
 
-    public GameObject smokePrefab; // ← Aquí arrastras tu prefab en el Inspector
+    public GameObject smokePrefab;
 
     [Range(0f, 1f)]
-    public float smokeSpawnChance = 0.7f; // 70% de probabilidad por defecto
+    public float smokeSpawnChance = 0.7f;
+
+    public ParticleSystem FireParticle;
+    public ParticleSystem AshParticle;
+    public ParticleSystem SparkParticle;
 
     private Renderer rend;
 
@@ -24,6 +28,27 @@ public class CubeTarget : MonoBehaviour
 
         rend = GetComponent<Renderer>();
         CambiarColorPorTipo();
+
+        // Detener todos los emisores de partículas al inicio
+        if (FireParticle != null) FireParticle.Stop();
+        if (AshParticle != null) AshParticle.Stop();
+        if (SparkParticle != null) SparkParticle.Stop();
+
+        // Activar los emisores según el tipo
+        if (isA)
+        {
+            if (FireParticle != null) FireParticle.Play();
+            if (AshParticle != null) AshParticle.Play();
+        }
+        else if (isB)
+        {
+            if (FireParticle != null) FireParticle.Play();
+        }
+        else if (isC)
+        {
+            if (FireParticle != null) FireParticle.Play();
+            if (SparkParticle != null) SparkParticle.Play();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -48,7 +73,8 @@ public class CubeTarget : MonoBehaviour
                 float damage = 1f;
                 RecibirDanio(damage);
             }
-            else{
+            else
+            {
                 float damage = -2f;
                 RecibirDanio(damage);
             }
