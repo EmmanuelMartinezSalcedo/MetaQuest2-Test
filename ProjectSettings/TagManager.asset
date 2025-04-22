@@ -10,13 +10,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Breakable
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Breaker
+  - NotCollisionable
+  - Player
+  - HandObject
   - 
   - 
   - 
