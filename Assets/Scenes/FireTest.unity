@@ -959,7 +959,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022041942}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
@@ -1997,7 +1997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2656926192991584838, guid: a73c2ab8472b5e043a5b127ce0174221, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.66
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 2656926192991584838, guid: a73c2ab8472b5e043a5b127ce0174221, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2034,6 +2034,18 @@ PrefabInstance:
     - target: {fileID: 2822337811773882770, guid: a73c2ab8472b5e043a5b127ce0174221, type: 3}
       propertyPath: m_Name
       value: CustomFuego
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877717977932095496, guid: a73c2ab8472b5e043a5b127ce0174221, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747025808055968345, guid: a73c2ab8472b5e043a5b127ce0174221, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747025808055968345, guid: a73c2ab8472b5e043a5b127ce0174221, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

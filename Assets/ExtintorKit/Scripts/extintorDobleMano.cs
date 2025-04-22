@@ -14,6 +14,7 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
 
     private bool dosManosActivas = false;
     private float nextFireTime = 0f;
+    public AudioSource foamAudioSource;   // ← Arrastrás el AudioSource desde el inspector
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
@@ -29,10 +30,27 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
 
     void Update()
     {
-        if (dosManosActivas && Time.time >= nextFireTime)
+        if (dosManosActivas)
         {
-            DispararFoam();
-            nextFireTime = Time.time + fireRate;
+            if (Time.time >= nextFireTime)
+            {
+                DispararFoam();
+                nextFireTime = Time.time + fireRate;
+
+                // Iniciar sonido si no está sonando
+                if (foamAudioSource != null && !foamAudioSource.isPlaying)
+                {
+                    foamAudioSource.Play();
+                }
+            }
+        }
+        else
+        {
+            // Si no hay dos manos, detener el sonido si está sonando
+            if (foamAudioSource != null && foamAudioSource.isPlaying)
+            {
+                foamAudioSource.Stop();
+            }
         }
     }
 
@@ -40,6 +58,12 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
     {
         int manos = interactorsSelecting.Count;
         dosManosActivas = manos >= 2;
+
+        // Cortar el audio si las manos bajan de 2
+        if (!dosManosActivas && foamAudioSource != null && foamAudioSource.isPlaying)
+        {
+            foamAudioSource.Stop();
+        }
     }
 
     private void DispararFoam()
