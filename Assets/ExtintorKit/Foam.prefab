@@ -129,7 +129,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
@@ -151,3 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 3
   decelerationRate: 5
+  shrinkDuration: 0.5
+  isA: 0
+  isB: 0
+  isC: 0
