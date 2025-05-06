@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public class handInput : MonoBehaviour
+public class HandInput : MonoBehaviour
 {
     public float speed = 5f; // Velocidad de movimiento
-    private Vector3 moveDirection;
     private bool isMoving = false;
-
     private Camera mainCamera;
 
     void Start()
@@ -15,25 +13,24 @@ public class handInput : MonoBehaviour
 
     void Update()
     {
-        if (isMoving)
+        if (isMoving && mainCamera != null)
         {
-            // Mover en la dirección calculada
-            transform.position += moveDirection * speed * Time.deltaTime;
+            // Recalculamos cada frame la dirección de la cámara (sin verticalidad)
+            Vector3 forward = mainCamera.transform.forward;
+            forward.y = 0f;                // Evita movimiento vertical
+            forward.Normalize();           // Para que la magnitud sea 1
+            // Movemos el objeto en esa dirección
+            transform.position += forward * speed * Time.deltaTime;
         }
     }
 
+    // Llamar para empezar a avanzar
     public void Avanzar()
     {
-        if (mainCamera != null)
-        {
-            // Tomamos la dirección hacia donde mira la cámara (sin verticalidad)
-            Vector3 forward = mainCamera.transform.forward;
-            forward.y = 0; // Opcional: evita que se mueva hacia arriba/abajo
-            moveDirection = forward.normalized;
-            isMoving = true;
-        }
+        isMoving = true;
     }
 
+    // Llamar para detener el movimiento
     public void Detenerse()
     {
         isMoving = false;

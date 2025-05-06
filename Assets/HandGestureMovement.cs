@@ -17,7 +17,7 @@ public class HandGestureMovement : MonoBehaviour{
             rb.linearVelocity = forwardDirection * speed;
         }
     }
-    public void OnRightFistBumpDetected(){
+    public void StartMovement(){
         isMoving = true;
     }
     public void StopMovement(){

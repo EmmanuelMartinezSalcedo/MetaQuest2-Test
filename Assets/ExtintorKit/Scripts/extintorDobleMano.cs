@@ -1,25 +1,72 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
+public class DispararFoamConDosManos : XRGrabInteractable
 {
-    public GameObject foamPrefab;    // Prefab de la espuma
-    public Transform foamSpawner;    // Lugar desde donde sale la espuma
-    public float foamSpeed = 10f;     // Velocidad de la espuma
-    public float fireRate = 0.1f;     // Cada cuánto dispara
+    public GameObject foamPrefab;
+    public Transform foamSpawner;
+    public float foamSpeed = 10f;
+    public float fireRate = 0.1f;
+    public AudioSource foamAudioSource;
 
     public bool isA;
     public bool isB;
     public bool isC;
 
-    private bool dosManosActivas = false;
+    public Transform anchor1;
+
     private float nextFireTime = 0f;
-    public AudioSource foamAudioSource;   // ← Arrastrás el AudioSource desde el inspector
+    private bool dosManosActivas = false;
+    private bool primeraManoEsIzquierda = false;
+
+    protected override void OnSelectEntering(SelectEnterEventArgs args)
+    {
+        string name = args.interactorObject.transform.name.ToLower();
+
+        // Si aún no hay ninguna mano, solo permitir si es la izquierda
+        if (interactorsSelecting.Count == 0)
+        {
+            if (!name.Contains("interactor l"))
+            {
+                var interactor = args.interactorObject as XRBaseInteractor;
+                if (interactor != null && interactor.interactionManager != null)
+                {
+                    interactor.interactionManager.CancelInteractableSelection((IXRSelectInteractable)this);
+                }
+
+                Debug.Log("Debe agarrar primero la mano izquierda.");
+                return;
+            }
+
+            primeraManoEsIzquierda = true;
+        }
+
+        base.OnSelectEntering(args);
+    }
+
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
+
         VerificarManos();
+
+        // Rotar ancla según mano
+        string name = args.interactorObject.transform.name.ToLower();
+        if (name.Contains("interactor l"))
+        {
+            Vector3 euler = anchor1.localEulerAngles;
+            euler.z = 90f;
+            anchor1.localEulerAngles = euler;
+        }
+        else if (name.Contains("interactor r"))
+        {
+            Vector3 euler = anchor1.localEulerAngles;
+            euler.z = -90f;
+            anchor1.localEulerAngles = euler;
+        }
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -37,7 +84,6 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
                 DispararFoam();
                 nextFireTime = Time.time + fireRate;
 
-                // Iniciar sonido si no está sonando
                 if (foamAudioSource != null && !foamAudioSource.isPlaying)
                 {
                     foamAudioSource.Play();
@@ -46,7 +92,6 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
         }
         else
         {
-            // Si no hay dos manos, detener el sonido si está sonando
             if (foamAudioSource != null && foamAudioSource.isPlaying)
             {
                 foamAudioSource.Stop();
@@ -56,10 +101,8 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
 
     private void VerificarManos()
     {
-        int manos = interactorsSelecting.Count;
-        dosManosActivas = manos >= 2;
+        dosManosActivas = interactorsSelecting.Count >= 2;
 
-        // Cortar el audio si las manos bajan de 2
         if (!dosManosActivas && foamAudioSource != null && foamAudioSource.isPlaying)
         {
             foamAudioSource.Stop();
@@ -71,30 +114,20 @@ public class DispararFoamConDosManos : UnityEngine.XR.Interaction.Toolkit.Intera
         if (foamPrefab != null && foamSpawner != null)
         {
             GameObject foam = Instantiate(foamPrefab, foamSpawner.position, foamSpawner.rotation);
-
-            // PASAR los atributos al foam
             foam foamScript = foam.GetComponent<foam>();
+
             if (foamScript != null)
             {
-                foamScript.isA = this.isA;
-                foamScript.isB = this.isB;
-                foamScript.isC = this.isC;
-            }
-            else
-            {
-                Debug.LogWarning("El prefab de Foam no tiene un script 'Foam' asignado!");
+                foamScript.isA = isA;
+                foamScript.isB = isB;
+                foamScript.isC = isC;
             }
 
-            // Aplicar movimiento
             Rigidbody rb = foam.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.linearVelocity = foamSpawner.forward * foamSpeed;
             }
-        }
-        else
-        {
-            Debug.LogWarning("Falta asignar FoamPrefab o FoamSpawner en el inspector!");
         }
     }
 }
