@@ -10,8 +10,8 @@ public class MeshDestroy : MonoBehaviour
     private Vector2 edgeUV = Vector2.zero;
     private Plane edgePlane = new Plane();
 
-    public int CutCascades = 1;
-    public float ExplodeForce = 0;
+    public int CutCascades = 2;
+    public float ExplodeForce = 10;
     public GameObject explosionVFX;
     const int MAX_PARTS = 200;
 
@@ -109,15 +109,12 @@ public class MeshDestroy : MonoBehaviour
                                                                                    UnityEngine.Random.Range(bounds.min.y, bounds.max.y),
                                                                                    UnityEngine.Random.Range(bounds.min.z, bounds.max.z)));
 
-                Debug.Log("Cascade: " + c + " / Part count: " + parts.Count);
-
                 subParts.Add(GenerateMesh(parts[i], plane, true));
                 subParts.Add(GenerateMesh(parts[i], plane, false));
             }
 
             if (subParts.Count > 1000)
             {
-                Debug.LogWarning("Too many subParts. Breaking.");
                 break;
             }
 
@@ -143,9 +140,9 @@ public class MeshDestroy : MonoBehaviour
             parts[i].MakeGameobject(this);
             var partGO = parts[i].GameObject;
 
+            partGO.name = "TRASH";
+            partGO.layer = LayerMask.NameToLayer("NotCollisionable");
             partGO.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
-
-            Destroy(partGO, 5f);
         }
     }
 
