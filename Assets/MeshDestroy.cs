@@ -135,6 +135,8 @@ public class MeshDestroy : MonoBehaviour
 
         Destroy(gameObject);
 
+        ScoreManager.Instance?.AddScore(1);
+
         for (var i = 0; i < parts.Count; i++)
         {
             parts[i].MakeGameobject(this);

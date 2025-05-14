@@ -53,6 +53,8 @@ public class CubeTarget : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
+
         foam foamScript = collision.gameObject.GetComponent<foam>();
         if (foamScript != null)
         {
@@ -97,9 +99,16 @@ public class CubeTarget : MonoBehaviour
         }
     }
 
+
+
     void Morir()
     {
         Debug.Log(gameObject.name + " ha sido destruido!");
+        // Sumar 1 punto al puntaje
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.AddScore(1);
+        }
         Destroy(gameObject);
     }
 

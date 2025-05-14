@@ -1399,6 +1399,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4100428105337689857, guid: 1e83292fcecc2034a87899dafcac1b41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100428105337689857, guid: 1e83292fcecc2034a87899dafcac1b41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100428105337689857, guid: 1e83292fcecc2034a87899dafcac1b41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100428105337689857, guid: 1e83292fcecc2034a87899dafcac1b41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100428105337689857, guid: 1e83292fcecc2034a87899dafcac1b41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 7392227518488643894, guid: 1e83292fcecc2034a87899dafcac1b41, type: 3}
       propertyPath: m_Name
       value: Right Hand
@@ -1663,8 +1683,11 @@ MonoBehaviour:
     fuego. Si en alg\xFAn momento te sientes inc\xF3modo, puedes quitarte los lentes
     de realidad virtual con cuidado.\n\nSi la aplicaci\xF3n presenta comportamientos
     inusuales, como una rotaci\xF3n continua, se trata de un error del sistema. En
-    ese caso, se recomienda reiniciar la aplicaci\xF3n.\n\nAl girar 180\xB0, aceptas
-    estos t\xE9rminos.\nSe recomienda discreci\xF3n."
+    ese caso, se recomienda reiniciar la aplicaci\xF3n.\n\nNo olvides esto, estamos
+    en una simulaci\xF3n bien hecha, ponte c\xF3modo, no es necesario que te muevas
+    en el entorno real, asi evitaremos accidentes, busca un \xE1rea con algo de espacio
+    y disfruta la experiencia\n\nAl girar 180\xB0, aceptas estos t\xE9rminos.\nSe
+    recomienda discreci\xF3n."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d96efdb64f2fd2a4f82d4ebf9a50f1bf, type: 2}
   m_sharedMaterial: {fileID: 330659742904912885, guid: d96efdb64f2fd2a4f82d4ebf9a50f1bf, type: 2}
@@ -4734,6 +4757,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9014170784076170790}
     m_Modifications:
+    - target: {fileID: 2544950176233354482, guid: 1c33380f4f286bf4ba0a2d018fd42e8f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544950176233354482, guid: 1c33380f4f286bf4ba0a2d018fd42e8f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544950176233354482, guid: 1c33380f4f286bf4ba0a2d018fd42e8f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 6268287708820285380, guid: 1c33380f4f286bf4ba0a2d018fd42e8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
